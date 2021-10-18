@@ -2,8 +2,8 @@
 
 ## tools
 * nvim / vim
-* curl / wget 
-* exa / bat
+* curl / wget / jq 
+* exa / bat / jwt
 * docker / dive / skopeo / buildah
 * snyk / trivy
 * nmap 
@@ -12,7 +12,7 @@
 
 ```
 sudo apt-get update -y
-sudo apt-get install -y vim curl wget docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go
+sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go
 
 sudo ln -s /usr/bin/batcat /usr/bin/bat
 
@@ -23,6 +23,16 @@ wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-k
 echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list
 sudo apt-get update -y
 sudo apt-get install trivy -y
+
+npm install -g snyk
+
+wget https://github.com/wagoodman/dive/releases/download/v0.9.2/dive_0.9.2_linux_amd64.deb
+sudo apt install ./dive_0.9.2_linux_amd64.deb
+rm dive_0.9.2_linux_amd64.deb
+
+curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/main/scripts/install.sh | bash
+gofish init
+gofish install jwt-cli
 
 
 
