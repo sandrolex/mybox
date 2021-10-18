@@ -11,10 +11,12 @@
 * nvm / npm 
 * nvim + config
 * tmux + config
+* gcloud
+* awscli
 
 ```
 sudo apt-get update -y
-sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux
+sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux unzip
 
 sudo ln -s /usr/bin/batcat /usr/bin/bat
 
@@ -35,6 +37,13 @@ rm dive_0.9.2_linux_amd64.deb
 curl -fsSL https://raw.githubusercontent.com/fishworks/gofish/main/scripts/install.sh | bash
 gofish init
 gofish install jwt-cli
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+rm -rf aws*
+
+
 
 
 
