@@ -9,10 +9,12 @@
 * nmap 
 * java8 / java11 / maven
 * nvm / npm 
+* nvim + config
+* tmux + config
 
 ```
 sudo apt-get update -y
-sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go
+sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux
 
 sudo ln -s /usr/bin/batcat /usr/bin/bat
 
