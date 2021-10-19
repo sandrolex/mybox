@@ -5,6 +5,7 @@
 * curl / wget / jq 
 * exa / bat / jwt
 * docker / dive / skopeo / buildah
+* dockle / hadolint
 * snyk / trivy
 * nmap 
 * java8 / java11 / maven
@@ -16,7 +17,7 @@
 
 ```
 sudo apt-get update -y
-sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux unzip
+sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux unzip 
 
 sudo ln -s /usr/bin/batcat /usr/bin/bat
 
@@ -43,8 +44,16 @@ unzip awscliv2.zip
 sudo ./aws/install
 rm -rf aws*
 
+VERSION=$(
+ curl --silent "https://api.github.com/repos/goodwithtech/dockle/releases/latest" | \
+ grep '"tag_name":' | \
+ sed -E 's/.*"v([^"]+)".*/\1/' \
+) && curl -L -o dockle.deb https://github.com/goodwithtech/dockle/releases/download/v${VERSION}/dockle_${VERSION}_Linux-64bit.deb
+sudo dpkg -i dockle.deb && rm dockle.deb
 
-
+wget -o hadolint https://github.com/hadolint/hadolint/releases/download/v2.7.0/hadolint-Linux-x86_64
+mv hadolint-Linux-x86_64 /usr/local/bi/hadolint 
+chmod +x /usr/local/bin/hadolint
 
 
 ```
