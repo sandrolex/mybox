@@ -4,6 +4,7 @@
 * nvim / vim
 * curl / wget / jq 
 * exa / bat / jwt
+* traceroute 
 * docker / dive / skopeo / buildah
 * dockle / hadolint
 * snyk / trivy
@@ -17,7 +18,7 @@
 
 ```
 sudo apt-get update -y
-sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux unzip 
+sudo apt-get install -y vim curl wget jq docker.io nmap bat openjdk-8-jdk openjdk-11-jdk maven golang-go neovim tmux unzip inetutils-traceroute
 
 sudo ln -s /usr/bin/batcat /usr/bin/bat
 
